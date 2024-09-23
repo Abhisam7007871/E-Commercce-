@@ -6,6 +6,7 @@ import javax.management.relation.Role;
 
 @Entity
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -47,7 +48,10 @@ public class User {
     public void setRole(Role role) {
         this.role = role;
     }
+
+    public static enum Role{
+        CUSTOMER, ADMIN
+    }
+
 }
-public enum Role{
-    CUSTOMER, ADMIN
-}
+
